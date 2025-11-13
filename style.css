@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Roboto',sans-serif;
+  background: radial-gradient(circle at top left,#00111a,#000);
+  color:#e0e0e0;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Header */
+header{
+  background:transparent;
+  text-align:center;
+  padding:25px 20px;
+  border-bottom:1px solid rgba(0,198,255,0.2);
+  backdrop-filter:blur(10px);
+  position:relative;
+}
+header h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:2.2em;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#00e0ff;
+  text-shadow:
+    0 0 5px #00e0ff,
+    0 0 10px #00e0ff,
+    0 0 20px #00b4d8,
+    0 0 40px #0077b6;
+  animation:glowPulse 3s infinite alternate;
+}
+#logoutBtn{
+  position:absolute;
+  right:20px;
+  top:25px;
+  background:transparent;
+  border:1px solid #00e0ff;
+  color:#00e0ff;
+  border-radius:5px;
+  padding:6px 12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+#logoutBtn:hover{background:#00e0ff;color:#000;}
+
+/* Nav Bar */
+nav{
+  text-align:center;
+  padding:15px 0;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+}
+nav button{
+  background:transparent;
+  border:1px solid #00c6ff;
+  color:#00c6ff;
+  margin:5px;
+  padding:10px 25px;
+  border-radius:25px;
+  cursor:pointer;
+  font-family:'Orbitron',sans-serif;
+  letter-spacing:1px;
+  transition:all 0.3s ease;
+}
+nav button:hover{
+  background:#00c6ff;
+  color:#000;
+  box-shadow:0 0 10px #00c6ff,0 0 30px #00c6ff;
+}
+
+/* Tabs & Forms */
+.tab{display:none;padding:25px;}
+.tab.active{display:block;}
+.hidden{display:none;}
+
+.form{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;
+  backdrop-filter:blur(10px);
+  padding:20px;
+  max-width:500px;
+  margin:auto;
+  box-shadow:0 0 20px rgba(0,198,255,0.1);
+}
+.form input,.form textarea,.form select{
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  background:rgba(255,255,255,0.1);
+  color:#e0e0e0;
+}
+.form input::placeholder,.form textarea::placeholder{color:#aaa;}
+.form button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:25px;
+  background:#00c6ff;
+  color:#000;
+  font-family:'Orbitron',sans-serif;
+  cursor:pointer;
+  transition:0.3s;
+}
+.form button:hover{
+  background:#00e0ff;
+  box-shadow:0 0 15px #00e0ff,0 0 30px #00e0ff;
+}
+
+/* Item Cards */
+.item-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(0,198,255,0.3);
+  border-radius:10px;
+  padding:15px;
+  margin:15px auto;
+  max-width:600px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 10px rgba(0,198,255,0.2);
+  transition:0.3s;
+}
+.item-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 20px rgba(0,198,255,0.4);
+}
+.item-card img{
+  width:90px;
+  height:90px;
+  border-radius:10px;
+  float:right;
+  margin-left:10px;
+  object-fit:cover;
+}
+
+/* Returned State */
+.item-card.returned {
+  border: 1px solid #00ff88;
+  box-shadow: 0 0 15px #00ff88, 0 0 25px rgba(0,255,136,0.3);
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+.item-card .returned-label {
+  display: inline-block;
+  background: #00ff88;
+  color: #000;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.item-card button {
+  margin-top: 8px;
+  margin-right: 5px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.item-card button:hover {
+  transform: scale(1.05);
+}
+
+.item-card button:nth-child(odd) {
+  background: #00c6ff;
+  color: #000;
+}
+
+.item-card button:nth-child(even) {
+  background: #ef233c;
+  color: #fff;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:15px;
+  background:linear-gradient(90deg,#0072ff,#00c6ff);
+  color:#fff;
+  font-family:'Orbitron',sans-serif;
+  letter-spacing:1px;
+}
+
+/* Login Container */
+.login-container{text-align:center;margin-top:10%;}
+.login-container .form{max-width:400px;}
+
+/* Animations */
+@keyframes glowPulse{
+  0%{text-shadow:0 0 5px #00e0ff,0 0 10px #00b4d8,0 0 20px #0077b6;}
+  100%{text-shadow:0 0 10px #00ffff,0 0 20px #00e0ff,0 0 40px #00b4d8,0 0 60px #0077b6;}
+}

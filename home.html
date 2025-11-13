@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💠 Campus Lost & Found Nexus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎒 College Lost & Found Portal</h1>
+    <button id="logoutBtn" onclick="logout()">Logout</button>
+  </header>
+
+  <nav>
+    <button onclick="showTab('add')">➕ Add Item</button>
+    <button onclick="showTab('lost')">💔 Lost Items</button>
+    <button onclick="showTab('found')">🧾 Found Items</button>
+  </nav>
+
+  <section id="add" class="tab active">
+    <h2>Add Lost / Found Item</h2>
+    <div class="form">
+      <input type="text" id="name" placeholder="Item name">
+      <textarea id="desc" placeholder="Item description"></textarea>
+      <input type="text" id="place" placeholder="Where found/lost">
+      <select id="type">
+        <option value="Lost">Lost</option>
+        <option value="Found">Found</option>
+      </select>
+      <input type="file" id="photo" accept="image/*">
+      <button onclick="addItem()">Add Item</button>
+    </div>
+  </section>
+
+  <section id="lost" class="tab hidden">
+    <h2>Lost Items</h2>
+    <input type="text" id="searchLost" placeholder="Search lost item..." onkeyup="searchItem('Lost')">
+    <div id="lostItems"></div>
+  </section>
+
+  <section id="found" class="tab hidden">
+    <h2>Found Items</h2>
+    <input type="text" id="searchFound" placeholder="Search found item..." onkeyup="searchItem('Found')">
+    <div id="foundItems"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Campus Lost & Found | Developed by Students</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
